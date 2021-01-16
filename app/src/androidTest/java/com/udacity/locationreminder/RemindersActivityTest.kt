@@ -95,7 +95,7 @@ class RemindersActivityTest :
         Espresso.onView(withId(R.id.noDataTextView)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
         Espresso.onView(withId(R.id.addReminderFAB)).perform(ViewActions.click())
         Espresso.onView(withId(R.id.reminderTitle)).perform(ViewActions.replaceText("Remember to breathe"))
-        Espresso.onView(withId(R.id.reminderDescription)).perform(ViewActions.replaceText("Suck the invisible air into your lungs"))
+        Espresso.onView(withId(R.id.reminderDescription)).perform(ViewActions.replaceText("Suck the invisible space gas into your breath pouches"))
         Espresso.onView(withId(R.id.selectLocation)).perform(ViewActions.click())
         Espresso.onView(withId(R.id.map)).perform(ViewActions.click())
         Espresso.pressBack()
@@ -103,14 +103,14 @@ class RemindersActivityTest :
         repository.saveReminder(
                 ReminderDTO(
                         "Remember to breathe",
-                        "Suck the invisible air into your lungs",
+                        "Suck the invisible space gas into your breath pouches",
                         "Anywhere",
                         0.0,
                         0.0
                 )
         )
         Espresso.onView(ViewMatchers.withText("Remember to breathe")).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
-        Espresso.onView(ViewMatchers.withText("Suck the invisible air into your lungs")).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+        Espresso.onView(ViewMatchers.withText("Suck the invisible space gas into your breath pouches")).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
         activityScenario.close()
     }
 }
